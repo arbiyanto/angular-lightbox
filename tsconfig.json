@@ -26,5 +26,8 @@
         "dist/crystalui/angular-lightbox/*"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false
   }
 }
