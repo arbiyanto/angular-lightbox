@@ -30,10 +30,10 @@ export class LightboxCommonComponent {
     @HostBinding('style.backgroundColor') hostStyleBackgroundColor: string;
     @HostBinding('style.transition') hostStyleTransition: string;
 
-    @ViewChild('imageFirst') _imageFirst: ElementRef;
-    @ViewChild('imageSecond') _imageSecond: ElementRef;
-    @ViewChild('imageLast') _imageLast: ElementRef;
-    @ViewChild('lightboxImage') _lightboxImage: ElementRef;
+    @ViewChild('imageFirst', { static: true }) _imageFirst: ElementRef;
+    @ViewChild('imageSecond', { static: true }) _imageSecond: ElementRef;
+    @ViewChild('imageLast', { static: true }) _imageLast: ElementRef;
+    @ViewChild('lightboxImage', { static: true }) _lightboxImage: ElementRef;
 
     get lightboxImage(){
         return this._lightboxImage;
@@ -88,7 +88,7 @@ export class LightboxCommonComponent {
             if (height > windowHeight){
                 height = windowHeight;
                 width = height * this.imageAspectRatio;
-            } 
+            }
 
             if (width > windowWidth){
                 width = windowWidth;
@@ -107,7 +107,7 @@ export class LightboxCommonComponent {
     }
 
     get containerInitialPosition(){
-        const scale =  (this.showState === 'initial-thumbnail-image') ? 1 : this.containerScale; 
+        const scale =  (this.showState === 'initial-thumbnail-image') ? 1 : this.containerScale;
         const top = this.thumbnailImagePosition.top;
         const left = this.thumbnailImagePosition.left;
         return 'matrix('+ scale +', 0, 0, '+ scale +','+ left +','+ top +')';
@@ -149,7 +149,7 @@ export class LightboxCommonComponent {
             return false;
         } else {
             return this.index === this.latestImageIndex;
-        }        
+        }
     }
 
     get latestImageIndex(){
@@ -204,12 +204,12 @@ export class LightboxCommonComponent {
     }
 
     emitState(type, state){
-        if (state === 'initial-virtual-image' || 
+        if (state === 'initial-virtual-image' ||
             state === 'initial-styles'){
             return;
         }
 
-        if (state === 'initial-default' || 
+        if (state === 'initial-default' ||
             state === 'initial-thumbnail-image'){
             state = 'initial';
         }
@@ -225,7 +225,7 @@ export class LightboxCommonComponent {
     }
 
     setClosingState(state: ClosingState){
-        this.closingState = state; 
+        this.closingState = state;
         this.emitState('closing-state', state);
     }
 
@@ -253,4 +253,4 @@ export class LightboxCommonComponent {
     updateThumbnailPosition(){
         this.containerStyles.transform = this.containerInitialPosition;
     }
-} 
+}

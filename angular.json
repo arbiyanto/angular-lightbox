@@ -170,5 +170,8 @@
       }
     }
   },
-  "defaultProject": "angularLightbox"
+  "defaultProject": "angularLightbox",
+  "cli": {
+    "analytics": "2cc9afc2-39dd-4a10-827d-4d9a2a94c252"
+  }
 }
