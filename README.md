@@ -1,4 +1,4 @@
-# Lightbox for Angular
+# Lightbox for Angular 9
 
 A simple, responsive lightbox component.
 
@@ -8,19 +8,7 @@ http://crystalui.org/components/lightbox
 
 ## Installation
 
-Install the npm package.
-
-	npm i @crystalui/angular-lightbox
-
-Import module:
-
-```ts
-import {CrystalLightboxModule} from '@crystalui/angular-lightbox';
-
-@NgModule({
-    imports: [CrystalLightboxModule]
-})
-```
+https://github.com/arbiyanto/angular-lightbox/packages/167318
 
 ## Usage
 You can cluster images into group.
