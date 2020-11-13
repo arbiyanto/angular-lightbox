@@ -8,7 +8,7 @@ http://crystalui.org/components/lightbox
 
 ## Installation
 
-https://github.com/arbiyanto/angular-lightbox/packages/167318
+
 
 ## Usage
 You can cluster images into group.
